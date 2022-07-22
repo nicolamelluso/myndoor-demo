@@ -6,7 +6,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 nlp = spacy.load('en_core_web_sm')
 
 df = pd.read_csv('chunk_stress_prob.csv', sep = ';')
@@ -74,9 +73,7 @@ import pandas as pd
 def load_model():
     
     nlp = spacy.load('en_core_web_sm')
-#    nlp = spacy.load("en_core_web_sm", disable=['ner'])
     return nlp
-
 
 @st.cache()
 def process_text(model_name, text):
