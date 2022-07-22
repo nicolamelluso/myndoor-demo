@@ -5,7 +5,21 @@ import spacy
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Import dependencies
+import streamlit as st
+import streamlit.components.v1 as components
+import pandas as pd
 
+@st.cache(allow_output_mutation=True)
+def load_model():
+    
+    nlp = spacy.load('en_core_web_sm')
+    return nlp
+
+@st.cache()
+def process_text(model_name, text):
+    nlp = load_model(model_name)
+    return nlp(text)
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -65,23 +79,6 @@ def color_map(x):
     if x > 0.65:
         return 'red'
 
-# Import dependencies
-import streamlit as st
-import streamlit.components.v1 as components
-import pandas as pd
-
-@st.cache(allow_output_mutation=True)
-def load_model():
-    
-    nlp = spacy.load('en_core_web_sm')
-#    nlp = spacy.load("en_core_web_sm", disable=['ner'])
-    return nlp
-
-
-@st.cache()
-def process_text(model_name, text):
-    nlp = load_model(model_name)
-    return nlp(text)
 
 
 DEFAULT_TEXT = "I am feeling stressed today."
