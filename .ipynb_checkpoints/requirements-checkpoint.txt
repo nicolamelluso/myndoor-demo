@@ -4,4 +4,3 @@ streamlit==0.83.0
 matplotlib
 nltk
 spacy
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-1.2.0/en_core_web_sm-1.2.0.tar.gz
