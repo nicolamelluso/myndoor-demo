@@ -1,6 +1,7 @@
 numpy
 pandas
 streamlit
+networkx
 matplotlib
 nltk
 click
